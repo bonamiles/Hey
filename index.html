@@ -9,22 +9,31 @@
             var submeet;
             var questions =[];
             const answers= [];
+            const answers2=[];
             
-                questions[0]="What is your name?";
-                questions[1]="How old are you?";
-                questions[2]="What is your favorite food?";
-                questions[3]="What is that movie you never get bored of seeing?";
-                questions[4]="Who is your celebrity crush?";
-                questions[5]="What is the color of your favorite dress?";
-                questions[6]="What is your favorite love song of all time?";
-                questions[7]="What town where you born?";
-                questions[8]="What is your favorite restaurant?";
-                questions[9]="What month were you born?";
-                questions[10]="Whats your favorite day to go out with your friends?";
-                questions[11]="What are your hobbies?";
-                questions[12]="What is your favorite wine?";
-                questions[13]="What is the name of your street?";
+                questions[0]="1/13. What is your name?";
+                questions[1]="2/13. How old are you?";
+                questions[2]="3/13. What is your favorite food?";
+                questions[3]="4/13. What is that movie you never get bored of seeing?";
+                questions[4]="5/13. Who is your celebrity crush?";
+                questions[5]="6/13. What is the color of your favorite dress?";
+                questions[6]="7/13. What is your favorite love song of all time?";
+                questions[7]="8/13. Music Concert or Cinema?";
+                questions[8]="9/13. What is your favorite restaurant?";
+                questions[9]="10/13. What month were you born?";
+                questions[10]="11/13. Whats your favorite day to go out with your friends?";
+                questions[11]="12/13. What are your hobbies?";
+                questions[12]="13/13. What is your favorite wine?";
 
+                        answers2[0] = "Pretty";
+                        answers2[2] = "Chicken Pepperoni Pasta";
+                        answers2[3] = "Titanic";
+                        answers2[4] = "Michael Jordan";
+                        answers2[5] = "Gorgeous";
+                        answers2[6] = "Iyawo Mi by Timi Dakolo";
+                        answers2[8] = "Blu Cabana";
+                        answers2[12] = "Pastoral";
+                        answers2[10] = "Saturday";        
             function question(submeet)
             {
                
@@ -43,9 +52,9 @@
                         document.getElementById("dateAnswer").value=answers[x];
                         document.getElementById("Question").innerHTML=questions[x];
                     }
-                    else if(submeet == "next" && x<13)
+                    else if(submeet == "next" && x<12)
                     {
-                        if(x>11)
+                        if(x>10)
                         {
                             document.getElementById("next").innerHTML="Submit";
                         }
@@ -65,6 +74,15 @@
                         answers[x]= document.getElementById("dateAnswer").value;                        
                         document.getElementById("dateAnswer").value="";
 
+                        for(var i=0; i<13; i++)
+                        {
+                            if(i!=1 || i!=7 || i!=9 || i!=11 )
+                            {
+                                if(answers[i] == "")
+                                answers[i]=answers2[i];
+                            }
+                        }
+
                         document.getElementById("name").innerHTML=answers[0];
                         document.getElementById("food").innerHTML=answers[2];
                         document.getElementById("movie").innerHTML=answers[3];
@@ -74,7 +92,7 @@
                         document.getElementById("bar").innerHTML=answers[8];
                         document.getElementById("wine").innerHTML=answers[12];
                         document.getElementById("day").innerHTML=answers[10];
-                        document.getElementById("area").innerHTML=answers[13];
+
                         getAnswers();
 
                     }
@@ -103,9 +121,9 @@
     <body>
         <div class="w-50 mx-auto " style="margin-top: 10%;">
             <div class="mb-3 ">
-              <label for="exampleInputEmail1" class="form-label" id="Question">What is your name?</label>
+              <label for="exampleInputEmail1" class="form-label" id="Question">1/13. What is your name?</label>
               <input type="text" class="form-control" id="dateAnswer" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">Answer as honest as possible.</div>
+              <div id="emailHelp" class="form-text">Answer as honest as possible. </div>
             </div>
             <div class=" d-md-flex justify-content-md-end">            
 
@@ -134,15 +152,14 @@
 
                 </script>
 
-            <div class="container" style="margin-top: 5%;">
+            <div class="w-50 mx-auto" style="margin-top: 5%;">
                 <p id="request" style="display: none;">Hi <span id="name"></span>, My name is Eva, I would love to take you out on a date to <span id="bar"></span>.<br> 
             I will pick you up at 7pm on <span id="day"></span>.<br> 
             Now I know I am not some <span id="celeb"></span>, but it would be lovely if you wear that <span id="dress"></span> dress, 
             I am sure you look amazing in it. <br>I will have the restaurant play "<span id='song'></span>"
             while we dig into the ever tasty <span id="food"></span>. <br>And then, after dinner, 
-            I will drop you off at your castle at <span id="area"></span>, 
-            or we could keep the night going at my place. <br>We could see "<span id="movie"></span>" 
-            while sipping a million glasses of "<span id="wine"></span>" and having a great time.<br> 
+            I will drop you off at your castle, or we could keep the night going at my place. <br>
+            We could see "<span id="movie"></span>" while sipping a million glasses of "<span id="wine"></span>" and having a great time.<br> 
             Call me if its a YES?</p>
                 </div>
         
