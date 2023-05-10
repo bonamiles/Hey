@@ -12,18 +12,18 @@
 
                 questions[0]="What is your name?";
                 questions[1]="How old are you?";
-                questions[2]="Whats your favorite food?";
-                questions[3]="Whats your favorite movie you never get bored of seeing?";
+                questions[2]="What is your favorite food?";
+                questions[3]="What is that movie you never get bored of seeing?";
                 questions[4]="Who is your celebrity crush?";
-                questions[5]="If you had to impress your celebrity crush, what color of dress would you wear?";
-                questions[6]="Whats your favorite love song of all time?";
+                questions[5]="What is the color of your favorite dress?";
+                questions[6]="What is your favorite love song of all time?";
                 questions[7]="What town where you born?";
-                questions[8]="Where is your favorite restaurant?";
-                questions[9]="Whats your favorite wine?";
+                questions[8]="What is your favorite restaurant?";
+                questions[9]="What month were you born?";
                 questions[10]="Whats your favorite day to go out with your friends?";
                 questions[11]="Whats your favorite time of the day to go out?";
-                questions[12]="What month were you born?";
-                questions[13]="Whats the name of your street?";
+                questions[12]="What is your favorite wine?";
+                questions[13]="What is the name of your street?";
 
             function question(submeet)
             {
@@ -61,6 +61,7 @@
                     else
                     {
                         document.getElementById('next').disabled = true;
+                        answers[x]= document.getElementById("dateAnswer").value;
 
                         document.getElementById("name").innerHTML=answers[0];
                         document.getElementById("food").innerHTML=answers[2];
@@ -69,7 +70,7 @@
                         document.getElementById("dress").innerHTML=answers[5];
                         document.getElementById("song").innerHTML=answers[6];
                         document.getElementById("bar").innerHTML=answers[8];
-                        document.getElementById("wine").innerHTML=answers[9];
+                        document.getElementById("wine").innerHTML=answers[12];
                         document.getElementById("day").innerHTML=answers[10];
                         document.getElementById("time").innerHTML=answers[11];
                         document.getElementById("area").innerHTML=answers[13];
@@ -99,7 +100,7 @@
         </script>
     </head>
     <body>
-        <div class="w-75 mx-auto " style="margin-top: 10%;">
+        <div class="container mx-auto " style="margin-top: 10%;">
             <div class="mb-3 ">
               <label for="exampleInputEmail1" class="form-label" id="Question">What is your name?</label>
               <input type="text" class="form-control" id="dateAnswer" aria-describedby="emailHelp">
@@ -121,7 +122,7 @@
 
 
             <div class="container" style="margin-top: 5%;">
-                <p id="request" style="display: none;">Hi <span id="name"></span>, Eva would love to take you out on a date to <span id="bar"></span>. 
+                <p id="request" style="display: none;">Hi <span id="name"></span>, I, Eva would love to take you out on a date to <span id="bar"></span>. 
             I will pick you up <span id="time"></span> on <span id="day"></span>, 
             Now I know I am not some <span id="celeb"></span>, but it would be lovely if you wear that <span id="dress"></span> dress, 
             I'm sure you look amazing in it. I will have the restaurant play "<span id="song"></span>"
@@ -129,7 +130,7 @@
             I Will drop you off at your castle at <span id="area"></span>, 
             or we could keep the night going at my place, we could see "<span id="movie"></span>" 
             while sipping a million glasses of "<span id="wine"></span>" and having a great time. 
-            Call me?</p>
+            What do you say?</p>
                 </div>
         
     </body>
